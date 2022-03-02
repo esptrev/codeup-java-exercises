@@ -65,22 +65,9 @@ public class ConsoleExercises {
 //        float totalRoomVolumeFloat = roomLengthFloat * roomWidthFloat * ceilingHeightFloat;
 //        System.out.printf("Your room volume is: %s cuft", totalRoomVolumeFloat);
 
-        Scanner mySixthDemoScanner = new Scanner(System.in);
-        mySixthDemoScanner.useDelimiter("/\n");
-        System.out.print("Please enter Length:");
-        int lengthSixthDemo = mySixthDemoScanner.nextInt();
-        System.out.print("Please enter Width:");
-        int widthSixthDemo = mySixthDemoScanner.nextInt();
-        System.out.print("Please enter Height:");
-        int heightSixthDemo = mySixthDemoScanner.nextInt();
-
-
-
-
-
-
-
 
 
     }
+
+
 }
