@@ -3,7 +3,7 @@ package main;
 public class StringExercise {
     public static void main(String[] args) {
         String demoONeStr = "We don't need no education";
-       String demoReplace = demoONeStr.replace("education", "thought control");
+        String demoReplace = demoONeStr.replace("education", "thought control");
         System.out.println(demoReplace);
 
         String checkString = "Check \"this\" out!, \"s inside of \"s!\n";
