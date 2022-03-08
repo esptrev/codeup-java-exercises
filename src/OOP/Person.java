@@ -38,7 +38,7 @@ public class Person {
 
     }
 
-    // returns the person's name
+    /// GETTERS/SETTERS  /// DOC ROB ACCESSORS ///
     public String getName(){
         return this.firstName;
     }
@@ -66,6 +66,7 @@ public class Person {
 
 //        Person person1 = new Person("John");
 //        Person person2 = person1;
+//        System.out.println(person1 == person2);
 //        System.out.println(person1.getName());
 //        System.out.println(person2.getName());
 //        person2.setName("Jane");
