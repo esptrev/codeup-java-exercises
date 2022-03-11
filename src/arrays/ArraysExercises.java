@@ -4,9 +4,6 @@ import java.util.Arrays;
 
 public class ArraysExercises {
 
-   private static String [] People;
-   private static String [] updatedPeople;
-
     public static void main(String[] args) {
 
         /// WHAT HAPPENS WHEN YOU RUN CODE BELOW ///

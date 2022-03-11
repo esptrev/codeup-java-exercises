@@ -19,7 +19,7 @@ public class MoviesApplication {
                 "2 - view movies in the animated category\n" +
                 "3 - view movies in the drama category\n" +
                 "4 - view movies in the horror category\n" +
-                "5 - view movies in the scifi category");
+                "5 - view movies in the scifi category\n");
 
         int userChoice = movieScanner.nextInt();
 
