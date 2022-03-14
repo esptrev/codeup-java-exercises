@@ -6,20 +6,17 @@ public class Student {
     private String studentName;
     private ArrayList <Integer> studentGrade;
 
+    ///MAIN NOT BEING USED NOW METHODS ARE CALLED IN GRADES APP///
+    public static void main(String[] args) {
+    }
+
+    ///CONSTRUCTOR///
     public Student(String studentName) {
         this.studentName = studentName;
         this.studentGrade = new ArrayList<>();
     }
 
-    public static void main(String[] args) {
-        Student studentOne = new Student("trevor");
-        studentOne.addGrade(85);
-        studentOne.addGrade(80);
-        studentOne.addGrade(92);
 
-        System.out.println(studentOne);
-        System.out.println(studentOne.getGradeAverage());
-    }
 
     @Override
     public String toString() {
@@ -41,6 +38,7 @@ public class Student {
         double averageGrade = (double) sum / studentGrade.size();
         return averageGrade;
     }
+
 
     public String getStudentName() {
         return studentName;
