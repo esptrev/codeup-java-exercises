@@ -7,39 +7,38 @@ import java.util.Scanner;
 
 public class GradesApplication {
 
-    static HashMap <String, Student> ghStudentUser = new HashMap<>();
-    static Scanner bufferInput = new Scanner(System.in);
-    static Input queryAnotherStudent = new Input();
+    private static HashMap<String, Student> ghStudentUser = new HashMap<>();
+    private static Scanner bufferInput = new Scanner(System.in);
+    private static Input queryAnotherStudent = new Input();
 
     public static void main(String[] args) {
 
-
-
         Student studentOne = new Student("Trevor");
-        ghStudentUser.put("Whetto", studentOne);
+        ghStudentUser.put("Huero", studentOne);
         studentOne.addGrade(85);
         studentOne.addGrade(80);
-        studentOne.addGrade(100);   
         studentOne.addGrade(100);
+        studentOne.addGrade(100);
+        studentOne.recordAttendance("14/4/2022", "A");
+        studentOne.recordAttendance("13/4/2022", "P");
         System.out.println(studentOne.getGradeAverage());
 
-
         Student studentTwo = new Student("William");
-        ghStudentUser.put("One_hand",studentTwo);
+        ghStudentUser.put("One_Hand", studentTwo);
         studentTwo.addGrade(90);
         studentTwo.addGrade(90);
         studentTwo.addGrade(95);
         studentTwo.addGrade(100);
 
         Student studentThree = new Student("Alex");
-        ghStudentUser.put("Little_Mohow",studentThree);
+        ghStudentUser.put("Little_Mohow", studentThree);
         studentThree.addGrade(95);
         studentThree.addGrade(95);
         studentThree.addGrade(85);
         studentThree.addGrade(75);
 
         Student studentFour = new Student("Nelson");
-        ghStudentUser.put("B^^^h_Lips",studentFour);
+        ghStudentUser.put("B^^^h_Lips", studentFour);
         studentFour.addGrade(75);
         studentFour.addGrade(90);
         studentFour.addGrade(65);
@@ -49,62 +48,48 @@ public class GradesApplication {
         System.out.println();
         System.out.println();
 
-
-
         System.out.println("Here are our github students");
         printStudentKeys(ghStudentUser);
-        promptUserQuery();
-
-
 
 
     }///END OF MAIN
 
+    public static void printStudentKeys(HashMap<String, Student> ghStudentUser) {
+        for (String key : ghStudentUser.keySet()) {
+            System.out.print("|" + key + "|  ");
+        }
+        System.out.println();
+        promptUserQuery();
+    }
 
-    public static void promptUserQuery(){
-        System.out.println("Who would you like more info on? ");
+    public static void promptUserQuery() {
+
+        System.out.print("Who would you like more info on? ");
         String studentQuery = bufferInput.nextLine();
         System.out.println(studentQuery);
-
 
         if (ghStudentUser.containsKey(studentQuery)) {
             Student currentStudent = ghStudentUser.get(studentQuery);
             System.out.println(studentQuery + "'s name is " + currentStudent.getStudentName() +
                     " their GPA is " + currentStudent.getGradeAverage() +
-                    currentStudent.getStudentGrade().toString());
+                    currentStudent.getStudentGrade() +
+                    currentStudent.getAttendanceHash());
+
         } else {
             System.out.println("Sorry, " + studentQuery + " isn't a current student");
         }
 
+        queryAnotherStudent();
+    }
 
-       boolean carryOn =  queryAnotherStudent.yesNo("Query another student?");
-        if(carryOn){
+    public static void queryAnotherStudent() {
+        boolean carryOn = queryAnotherStudent.yesNo("Query another student?");
+        if (carryOn) {
             promptUserQuery();
-        }else{
+        } else {
             System.out.println("Good-bye");
         }
-
     }
-
-
-    public static void printStudentKeys(HashMap <String, Student> ghStudentUser) {
-        for (String key: ghStudentUser.keySet()) {
-            System.out.print("|" + key + "|  ");
-        }
-        System.out.println();
-    }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }/// END OF CLASS

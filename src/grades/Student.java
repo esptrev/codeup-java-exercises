@@ -1,21 +1,30 @@
 package grades;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Student {
     private String studentName;
-    private ArrayList <Integer> studentGrade;
+    private ArrayList<Integer> studentGrade;
+    private HashMap<String, String> attendanceHash;
 
     ///MAIN NOT BEING USED NOW METHODS ARE CALLED IN GRADES APP///
     public static void main(String[] args) {
+
+
     }
 
     ///CONSTRUCTOR///
     public Student(String studentName) {
         this.studentName = studentName;
         this.studentGrade = new ArrayList<>();
+        this.attendanceHash = new HashMap<>();
     }
 
+    public void recordAttendance(String date, String value) {
+        attendanceHash.put(date, value);
+        System.out.println(attendanceHash);
+    }
 
 
     @Override
@@ -26,13 +35,22 @@ public class Student {
                 '}';
     }
 
-    public void addGrade(int grade){
+    public HashMap<String, String> getAttendanceHash() {
+        return attendanceHash;
+    }
+
+    public void setAttendanceHash(HashMap<String, String> attendanceHash) {
+        this.attendanceHash = attendanceHash;
+    }
+
+
+    public void addGrade(int grade) {
         studentGrade.add(grade);
     }
 
-    public double getGradeAverage(){
+    public double getGradeAverage() {
         int sum = 0;
-        for (int grade: studentGrade) {
+        for (int grade : studentGrade) {
             sum += grade;
         }
         double averageGrade = (double) sum / studentGrade.size();
