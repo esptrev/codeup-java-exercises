@@ -2,10 +2,12 @@ package util;
 
 import java.util.Scanner;
 
+import static java.lang.Integer.toBinaryString;
+import static java.lang.Integer.toHexString;
+
 public class Input {
 
-    public static void main(String[] args) {
-
+    public  void main(String[] args) {
     }
 
     private Scanner inputScanner;
@@ -91,6 +93,20 @@ public class Input {
             System.out.println("You didn't enter a decimal number");
         }
         return getDoubleException();
+    }
+
+    public int getBinary(){
+        String binaryString = getString("Please enter binary number");
+        int userBinary = Integer.valueOf(binaryString);
+        System.out.println(toBinaryString(userBinary));
+        return userBinary;
+    }
+
+    public int getHexString(){
+        String hexString = getString("Please enter a hex code");
+        int userHex = Integer.valueOf(hexString);
+        System.out.println(toHexString(userHex));
+        return userHex;
     }
 
 
