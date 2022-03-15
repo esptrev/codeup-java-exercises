@@ -11,5 +11,8 @@ public class InputTest {
         test.getInt();
         test.getDouble();
 
+        test.getIntException();
+        test.getDoubleException();
+
     }
 }

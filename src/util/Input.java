@@ -58,10 +58,8 @@ public class Input {
         return userNum;
     }
 
-
     public double getDouble(double min, double max) {
-        System.out.printf("Please enter a number between %f and %f.%n", min, max);
-        double userNum = inputScanner.nextDouble();
+        double userNum = getDouble();
         if (userNum < min || userNum > max) {
             System.out.println("Try again");
             getDouble(min, max);
@@ -69,6 +67,30 @@ public class Input {
             System.out.printf("Your number %f is in range\n", userNum);
         }
         return userNum;
+    }
+
+    public int getIntException() {
+        String intParsedString = getString("Please enter a number");
+        try {
+            int userNum = Integer.valueOf(intParsedString);
+            System.out.println("You entered: " + userNum);
+            return userNum;
+        }catch (NumberFormatException e){
+            System.out.println("You didn't enter a number" + e.getMessage());
+        }
+        return getIntException();
+    }
+
+    public double getDoubleException (){
+        String dubParsedString = getString("Please enter a decimal based number");
+        try{
+            double userNum = Integer.valueOf(dubParsedString);
+            System.out.println("You entered: " + userNum);
+            return userNum;
+        }catch (NumberFormatException e){
+            System.out.println("You didn't enter a decimal number");
+        }
+        return getDoubleException();
     }
 
 
