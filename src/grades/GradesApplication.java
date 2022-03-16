@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 public class GradesApplication {
 
-    private static HashMap<String, Student> ghStudentUser = new HashMap<>();
-    private static Scanner bufferInput = new Scanner(System.in);
-    private static Input queryAnotherStudent = new Input();
+    private static final HashMap<String, Student> ghStudentUser = new HashMap<>();
+    private static final Scanner bufferInput = new Scanner(System.in);
+    private static final Input queryAnotherStudent = new Input();
 
     public static void main(String[] args) {
 
