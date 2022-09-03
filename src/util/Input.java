@@ -8,6 +8,7 @@ import static java.lang.Integer.toHexString;
 public class Input {
 
     public  void main(String[] args) {
+
     }
 
     private Scanner inputScanner;
